@@ -20,6 +20,6 @@ from cliente.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
-    path('clientes/', clientes),
+    path('clientes/', clientes, name='ListaClientes'),
     path('clientes/novo', novo_cliente, name='NovoCliente'),
 ]

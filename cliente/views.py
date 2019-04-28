@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from .form import *
 import datetime
@@ -27,6 +27,6 @@ def novo_cliente(request):
     # validar
     if form.is_valid():
         form.save()
-        return clientes(request)
+        return redirect('ListaClientes')   
     data['form'] = form
     return render(request, 'cliente/novoCliente.html', data)
