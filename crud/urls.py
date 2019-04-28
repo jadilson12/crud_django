@@ -23,4 +23,5 @@ urlpatterns = [
     path('clientes/', clientes, name='ListaClientes'),
     path('clientes/novo', novo_cliente, name='NovoCliente'),
     path('clientes/update/<int:pk>', update_cliente, name='UpdateCliente'),
+    path('clientes/delete/<int:pk>', delete_cliente, name='DeleteCliente'),
 ]

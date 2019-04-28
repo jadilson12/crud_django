@@ -36,10 +36,17 @@ def update_cliente(request, pk):
     data = {}
     clientes = Cliente.objects.get(pk=pk)
     form = ClienteForm(request.POST or None, instance=clientes)
-  
+
     # validar
     if form.is_valid():
         form.save()
         return redirect('ListaClientes')
     data['form'] = form
+    data['clientes'] = clientes
     return render(request, 'cliente/novoCliente.html', data)
+
+
+def delete_cliente(request, pk):
+    clientes = Cliente.objects.get(pk=pk)
+    clientes.delete()
+    return redirect('ListaClientes')
