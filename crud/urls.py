@@ -17,9 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from cliente.views import *
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('clientes/', clientes),
+    path('clientes/novo', novo_cliente),
 ]
