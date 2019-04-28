@@ -8,7 +8,7 @@
     <h1>Lista de Clientes</h1>
     <ul>
     {% for cliente in clientes %}
-            <li>{{ cliente}}</li>
+            <li>{{ cliente.nome }} - {{ cliente.sobrenome }} - {{ cliente.dt_criacao }}</li>
     {%endfor%}
     </ul>
 </body>
