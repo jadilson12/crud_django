@@ -7,5 +7,21 @@
 <body>
         <h1>Olá mundo</h1>
     {{ agora }}
+
+    <ul>
+    {% for diverso in diversos %}
+        {% if diverso == "motos" %}
+           <li><b>{{ diverso }}</b></li>
+        {% else %}
+            <li>{{ diverso}}</li>
+        {% endif %}
+
+
+
+
+    {%endfor%}
+    </ul>
+
+
 </body>
 </html>
