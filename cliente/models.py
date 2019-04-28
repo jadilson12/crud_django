@@ -6,6 +6,10 @@ class Cliente(models.Model):
     sobrenome = models.CharField(max_length=30)
     dt_criacao = models.DateTimeField(auto_now_add=True)
 
+    # Converte objeto para o nome de eximição na  view
+    def __str__(self):
+        return self.nome
+
 class Produt(models.Model):
     nome = models.CharField(max_length=15)
     descricao = models.CharField(max_length=100)
@@ -19,6 +23,14 @@ class Produt(models.Model):
     class Meta:
         verbose_name_plural = 'Produtos'
 
+    # Converte objeto para o nome de eximição na  view
+    def __str__(self):
+        return self.nome
+
 class Categoria(models.Model):
     nome = models.CharField(max_length=30)
     dt_criacao = models.DateTimeField(auto_now_add=True)
+
+    # Converte objeto para o nome de eximição na  view
+    def __str__(self):
+        return self.nome
