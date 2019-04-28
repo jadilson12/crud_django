@@ -11,5 +11,6 @@
             <li>{{ cliente.nome }} - {{ cliente.sobrenome }} - {{ cliente.dt_criacao }}</li>
     {%endfor%}
     </ul>
+    <a href="{% url 'NovoCliente' %}" >Novo Cliente</a>
 </body>
 </html>
