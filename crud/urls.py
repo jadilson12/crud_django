@@ -22,4 +22,5 @@ urlpatterns = [
     path('', home),
     path('clientes/', clientes, name='ListaClientes'),
     path('clientes/novo', novo_cliente, name='NovoCliente'),
+    path('clientes/update/<int:pk>', update_cliente, name='UpdateCliente'),
 ]

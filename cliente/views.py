@@ -27,6 +27,19 @@ def novo_cliente(request):
     # validar
     if form.is_valid():
         form.save()
-        return redirect('ListaClientes')   
+        return redirect('ListaClientes')
+    data['form'] = form
+    return render(request, 'cliente/novoCliente.html', data)
+
+
+def update_cliente(request, pk):
+    data = {}
+    clientes = Cliente.objects.get(pk=pk)
+    form = ClienteForm(request.POST or None, instance=clientes)
+  
+    # validar
+    if form.is_valid():
+        form.save()
+        return redirect('ListaClientes')
     data['form'] = form
     return render(request, 'cliente/novoCliente.html', data)
