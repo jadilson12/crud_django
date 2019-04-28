@@ -13,7 +13,7 @@ class Produt(models.Model):
     valor = models.DecimalField(max_digits=7, decimal_places=2)
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
     observacao = models.TextField(null=True, blank=True)
-    data = models.DateTimeField(auto_now=True)
+    data = models.DateTimeField() # Exibe o calendário e horario na view
 
     # renomear a tabela
     class Meta:
