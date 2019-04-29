@@ -12,12 +12,12 @@ def home(request):
 
     # Propriedade do dicionario adionando now
     data['agora'] = datetime.datetime.now()
-    return render(request, 'cliente/home.html', data)
+    return render(request, 'home.html', data)
 
 
 def clientes(request):
     data = {'clientes': Cliente.objects.all()}
-    return render(request, 'cliente/lista.html', data)
+    return render(request, 'lista.html', data)
 
 
 def novo_cliente(request):
@@ -28,7 +28,7 @@ def novo_cliente(request):
         form.save()
         return redirect('ListaClientes')
     data['form'] = form
-    return render(request, 'cliente/novoCliente.html', data)
+    return render(request, 'novoCliente.html', data)
 
 
 def update_cliente(request, pk):
@@ -42,7 +42,7 @@ def update_cliente(request, pk):
         return redirect('ListaClientes')
     data['form'] = form
     data['clientes'] = clientes
-    return render(request, 'cliente/novoCliente.html', data)
+    return render(request, 'novoCliente.html', data)
 
 
 def delete_cliente(request, pk):
