@@ -1,6 +1,14 @@
 from django.db import models
 
 
+class Cpf(models.Model):
+    Numero = models.CharField(max_length=11)
+    data_exp = models.DateTimeField(auto_now=False)
+   
+    def __str__(self):
+        return self.Numero
+
+
 class Cliente(models.Model):
     nome = models.CharField(max_length=30)
     sobrenome = models.CharField(max_length=30)
@@ -8,6 +16,7 @@ class Cliente(models.Model):
     salario = models.DecimalField(max_digits=10, decimal_places=2)
     idade = models.IntegerField()
     email = models.EmailField()
+    cpf = models.OneToOneField(Cpf, null=True, blank=True, on_delete=True)
     dt_criacao = models.DateTimeField()
 
     # Convert object for view
