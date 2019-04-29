@@ -3,8 +3,10 @@ from .models import *
 
 
 class ClienteAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'sobrenome', 'endereco', 'email', 'idade','cpf')
+    list_display = ('id','nome', 'sobrenome', 'endereco', 'email', 'idade', 'cpf')
     list_filter = ['grupo']
+    search_fields = ['idade','nome', 'id']
+
 
 class TelefoneAdmin(admin.ModelAdmin):
     list_display = ('telefone', 'descricao', 'cliente')
