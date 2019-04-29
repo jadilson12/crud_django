@@ -4,3 +4,4 @@ from .models import *
 admin.site.register(Cliente)
 admin.site.register(Produt)
 admin.site.register(Categoria)
+admin.site.register(Telefone)
