@@ -3,8 +3,8 @@ from .models import *
 
 
 class ClienteAdmin(admin.ModelAdmin):
-    list_display = ('nome','sobrenome', 'endereco', 'email', 'idade', 'cpf')
-
+    list_display = ('nome', 'sobrenome', 'endereco', 'email', 'idade','cpf')
+    list_filter = ['grupo']
 
 class TelefoneAdmin(admin.ModelAdmin):
     list_display = ('telefone', 'descricao', 'cliente')
