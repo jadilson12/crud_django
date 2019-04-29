@@ -25,6 +25,7 @@ class Cliente(models.Model):
     email = models.EmailField()
     cpf = models.OneToOneField(Cpf, null=True, blank=True, on_delete=True)
     grupo = models.ManyToManyField(Grupo, blank=False)
+    foto = models.ImageField(upload_to='cliente/avatar')
     dt_criacao = models.DateTimeField()
 
     # Convert object for view
