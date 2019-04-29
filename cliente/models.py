@@ -7,7 +7,11 @@ class Cpf(models.Model):
    
     def __str__(self):
         return self.Numero
-
+class Grupo(models.Model):
+    nome = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.nome
 
 class Cliente(models.Model):
     nome = models.CharField(max_length=30)
@@ -17,6 +21,7 @@ class Cliente(models.Model):
     idade = models.IntegerField()
     email = models.EmailField()
     cpf = models.OneToOneField(Cpf, null=True, blank=True, on_delete=True)
+    grupo = models.ManyToManyField(Grupo, blank=False)
     dt_criacao = models.DateTimeField()
 
     # Convert object for view
