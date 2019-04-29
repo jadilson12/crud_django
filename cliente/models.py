@@ -4,14 +4,17 @@ from django.db import models
 class Cpf(models.Model):
     Numero = models.CharField(max_length=11)
     data_exp = models.DateTimeField(auto_now=False)
-   
+
     def __str__(self):
         return self.Numero
+
+
 class Grupo(models.Model):
     nome = models.CharField(max_length=100)
-    
+
     def __str__(self):
         return self.nome
+
 
 class Cliente(models.Model):
     nome = models.CharField(max_length=30)
@@ -25,9 +28,9 @@ class Cliente(models.Model):
     dt_criacao = models.DateTimeField()
 
     # Convert object for view
-    
+
     def __str__(self):
-        return self.nome
+        return self.nome + ' ' + self.sobrenome
 
 
 class Telefone(models.Model):
@@ -36,7 +39,7 @@ class Telefone(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=True)
 
     def __str__(self):
-        return self.telefone + ' - ' + self.descricao
+        return self.descricao
 
 
 class Produt(models.Model):
