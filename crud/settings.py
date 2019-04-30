@@ -126,6 +126,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = 'storage'
 
 STATICFILES_DIRS = [
-    'cliente/templates/assets',
+    'cliente/templates',
 
 ]

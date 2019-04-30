@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Bootstrap 4.3-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
+
+        <!-- Materializes-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/favicon.ico">
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+
+<body>
+    <div class="container">
+        {% include 'navbar.html' %}
+
+        {% block main %} {%  endblock %}
+
+        {% include 'footer.html' %}
+   </div>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="{% static 'js/jquery-3.4.0.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+  <script src="{% static 'js/dataTables.bootstrap4.min.js' %}"></script>
+
+  {% block js %}{% endblock %}
+
+</body>
+</html>

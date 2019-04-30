@@ -1,0 +1,15 @@
+.card{
+    margin-bottom: 10px;
+}
+.navbar{
+    margin-bottom: 10px;
+}
+
+td.td-icon{
+    padding: 5px 0;
+    text-align: center;
+}
+
+i.icon-delete {
+    color: red;
+}

@@ -4,7 +4,7 @@ from .models import *
 
 class ClienteAdmin(admin.ModelAdmin):
     list_display = ('id','nome', 'sobrenome', 'endereco', 'email', 'idade', 'cpf')
-    list_filter = ['grupo']
+    # list_filter = ['grupo']
     search_fields = ['idade','nome', 'id']
 
 
@@ -15,4 +15,4 @@ class TelefoneAdmin(admin.ModelAdmin):
 admin.site.register(Cliente, ClienteAdmin)
 admin.site.register(Telefone, TelefoneAdmin)
 admin.site.register(Cpf)
-admin.site.register(Grupo)
+# admin.site.register(Grupo)
