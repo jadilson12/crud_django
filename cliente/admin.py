@@ -13,8 +13,6 @@ class TelefoneAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Cliente, ClienteAdmin)
-admin.site.register(Produt)
-admin.site.register(Categoria)
 admin.site.register(Telefone, TelefoneAdmin)
 admin.site.register(Cpf)
 admin.site.register(Grupo)

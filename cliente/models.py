@@ -26,7 +26,6 @@ class Cliente(models.Model):
     cpf = models.OneToOneField(Cpf, null=True, blank=True, on_delete=True)
     grupo = models.ManyToManyField(Grupo, blank=False)
     foto = models.ImageField(upload_to='cliente/avatar')
-    dt_criacao = models.DateTimeField()
 
     # Convert object for view
 
@@ -41,31 +40,3 @@ class Telefone(models.Model):
 
     def __str__(self):
         return self.descricao
-
-
-class Produt(models.Model):
-    nome = models.CharField(max_length=15)
-    descricao = models.CharField(max_length=100)
-    quantidade = models.IntegerField()
-    valor = models.DecimalField(max_digits=7, decimal_places=2)
-    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    observacao = models.TextField(null=True, blank=True)
-    data = models.DateTimeField()  # Exibe o calendário e horario na view
-
-    # rename a table
-
-    class Meta:
-        verbose_name_plural = 'Produtos'
-
-    # Converte object para o nome de eximição na  view
-    def __str__(self):
-        return self.nome
-
-
-class Categoria(models.Model):
-    nome = models.CharField(max_length=30)
-    dt_criacao = models.DateTimeField(auto_now_add=True)
-
-    # Converte objeto para o nome de eximição na  view
-    def __str__(self):
-        return self.nome
