@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from .form import *
 import datetime
@@ -49,3 +50,10 @@ def delete_cliente(request, pk):
     clientes = Cliente.objects.get(pk=pk)
     clientes.delete()
     return redirect('clientes')
+
+
+def cliente_json(request):
+    clientes = Cliente.objects.all()
+    data = [cliente.to_dirc_Json() for cliente in clientes]
+    reponse = {'data': data}
+    return JsonResponse(reponse)

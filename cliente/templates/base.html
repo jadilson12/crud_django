@@ -9,6 +9,7 @@
 
         <!-- Materializes-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+{#  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">#}
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -34,8 +35,6 @@
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
   <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
   <script src="{% static 'js/dataTables.bootstrap4.min.js' %}"></script>
-
-  {% block js %}{% endblock %}
-
+{% block js %}{% endblock %}
 </body>
 </html>

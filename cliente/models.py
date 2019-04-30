@@ -33,6 +33,19 @@ class Cliente(models.Model):
     def __str__(self):
         return self.nome + ' ' + self.sobrenome
 
+    def to_dirc_Json(self):
+        data = {
+            'id': self.id,
+            'nome': self.nome,
+            'sobrenome': self.sobrenome,
+            'endereco': self.endereco,
+            'salario': self.salario,
+            'idade': self.idade,
+            'email': self.email,
+            'cpf': self.cpf,
+        }
+        return data
+
 
 class Telefone(models.Model):
     telefone = models.CharField(max_length=20)
