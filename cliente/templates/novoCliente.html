@@ -1,22 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Novo Cliente</title>
-</head>
-<body>
+{% extends 'layouts/app.html' %}
+{% load crispy_forms_tags %}
 
-    <h1>Novo Cliente</h1>
-    <form method="POST">
-        {% csrf_token %}
+{% block title %} Sejam bem vindo a página - principal {% endblock %}
 
-        {{ form.as_p }}
-
-        <button type="submit">Salvar</button>
-        {% if clientes %}
-             <a href="{% url 'DeleteCliente'  clientes.id %}">remover</a>
+{% block main %}
+<div class="card card-top">
+    <div class="card-body">
+        {% if clientes.nome  %}
+             <form method="post" action="{% url 'UpdateCliente' clientes.id %}">
+        {% else %}
+              <form method="post" action="{% url 'NovoCliente' %}" >
+{#             {% with "novo" as novo %}#}
+{#             {% endwith %}#}
         {% endif %}
-    </form>
 
-</body>
-</html>
+              {% csrf_token %}
+            <div class="row">
+                <div class="col">
+                      {{ form.nome|as_crispy_field }}
+                </div>
+                <div class="col">
+                    {{ form.sobrenome|as_crispy_field }}
+                </div>
+                <div class="col">
+                    {{ form.email|as_crispy_field }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    {{ form.cpf|as_crispy_field }}
+                </div>
+                <div class="col">
+                    {{ form.idade|as_crispy_field }}
+                </div>
+                <div class="col">
+                    {{ form.endereco|as_crispy_field }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-3">
+                    {{ form.salario|as_crispy_field }}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a role="button" href="{% url 'clientes' %}"  class="btn btn-secondary">Voltar</a>
+                <button type="cancel" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+
+            {% if clientes.nome  %}
+                  <button type="submit" class="btn btn-primary">Atualizar</button>
+            {% else %}
+{#                {% if novo != 'novo' %}#}
+                  <button type="submit" class="btn btn-primary">Salvar</button>
+{#                {% endif %}#}
+            {% endif %}
+            </div>
+          </form>
+
+    </div>
+</div>
+{% endblock %}

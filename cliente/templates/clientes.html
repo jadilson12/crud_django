@@ -5,8 +5,15 @@
 {% block main %}
 <div class="card card-top">
     <div class="card-header">
-        <div class="card-title">Lista de Clientes</div>
-    </div>
+      <div class="row">
+        <div class="col-3 mr-auto">
+                  Lista de Clientes
+            </div>
+                <div class="col-auto">
+                  <a role="button" class="btn btn-sm btn-primary" href="{% url 'NovoCliente' %}">Add novo Cliente</a>
+                </div>
+            </div>
+        </div>
     <div class="card-body">
         <table class="table table-hover">
           <thead>
@@ -14,12 +21,31 @@
               <th>ID</th>
               <th>Nome</th>
               <th>SobreNome</th>
-              <th>dt_criacao</th>
+              <th>Endereco</th>
+              <th>Idade</th>
+              <th>E-mail</th>
+              <th>CPF</th>
+              <th>Ações</th>
             </tr>
           </thead>
           <tbody>
-              <tr>
-            {% render_table table %}
+             {% for cliente in clientes %}
+                <tr>
+                    <td>{{ cliente.id }}</td>
+                    <td>{{ cliente.nome }}</td>
+                    <td>{{ cliente.sobrenome }}</td>
+                    <td>{{ cliente.endereco }}</td>
+                    <td>{{ cliente.idade}}</td>
+                    <td>{{ cliente.email }}</td>
+                    <td>{{ cliente.cpf }}</td>
+                    <td>
+                        <a role="button" class="btn btn-sm btn-primary" href="{% url 'UpdateCliente'  cliente.id %}"> <i class="tiny material-icons">edit</i></a>
+                        <a role="button" class="btn btn-sm btn-danger" href="{% url 'DeleteCliente'  cliente.id %}"><i class="tiny material-icons">delete</i></a>
+
+                    </td>
+                </tr>
+             {%endfor%}
+
           </tbody>
         </table>
     </div>

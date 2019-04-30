@@ -26,7 +26,7 @@ def novo_cliente(request):
     # validar
     if form.is_valid():
         form.save()
-        return redirect('ListaClientes')
+        return redirect('clientes')
     data['form'] = form
     return render(request, 'novoCliente.html', data)
 
@@ -39,7 +39,7 @@ def update_cliente(request, pk):
     # validar
     if form.is_valid():
         form.save()
-        return redirect('ListaClientes')
+        return redirect('clientes')
     data['form'] = form
     data['clientes'] = clientes
     return render(request, 'novoCliente.html', data)
@@ -48,4 +48,4 @@ def update_cliente(request, pk):
 def delete_cliente(request, pk):
     clientes = Cliente.objects.get(pk=pk)
     clientes.delete()
-    return redirect('ListaClientes')
+    return redirect('clientes')
