@@ -10,8 +10,6 @@
              <form method="post" action="{% url 'UpdateCliente' clientes.id %}">
         {% else %}
               <form method="post" action="{% url 'NovoCliente' %}" >
-{#             {% with "novo" as novo %}#}
-{#             {% endwith %}#}
         {% endif %}
 
               {% csrf_token %}
@@ -49,13 +47,10 @@
             {% if clientes.nome  %}
                   <button type="submit" class="btn btn-primary">Atualizar</button>
             {% else %}
-{#                {% if novo != 'novo' %}#}
                   <button type="submit" class="btn btn-primary">Salvar</button>
-{#                {% endif %}#}
             {% endif %}
             </div>
           </form>
-
     </div>
 </div>
 {% endblock %}

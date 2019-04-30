@@ -27,13 +27,15 @@
         {% block main %} {%  endblock %}
 
         {% include 'footer.html' %}
-   </div>
+    </div>
 
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="{% static 'js/jquery-3.4.0.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
-  <script src="{% static 'js/dataTables.bootstrap4.min.js' %}"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'js/jquery-3.4.0.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'js/dataTables.bootstrap4.min.js' %}"></script>
+
 {% block js %}{% endblock %}
+
 </body>
 </html>
