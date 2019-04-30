@@ -13,3 +13,7 @@ td.td-icon{
 i.icon-delete {
     color: red;
 }
+
+table{
+    width:100%;
+}

@@ -3,38 +3,36 @@
 {% block title %} Clientes com json{% endblock %}
 
 {% block main %}
-<div class="card card-top">
-    <div class="card-header">
-      <div class="row">
-        <div class="col-3 mr-auto">
-                  Lista de Clientes com json
-            </div>
-                <div class="col-auto">
-                  <a role="button" class="btn btn-sm btn-primary" href="{% url 'NovoCliente' %}">Add novo Cliente</a>
+
+    <div class="card card-top">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-3 mr-auto">
+                      Lista de Clientes com json
+                </div>
+                    <div class="col-auto">
+                      <a role="button" class="btn btn-sm btn-primary" href="{% url 'NovoCliente' %}">Add novo Cliente</a>
+                    </div>
                 </div>
             </div>
+        <div class="card-body">
+          <table id="clientes" class="table table-hover table-bordered">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Nome</th>
+                      <th>SobreNome</th>
+                      <th>Endereco</th>
+                      <th>Idade</th>
+                      <th>E-mail</th>
+                      <th>CPF</th>
+                    </tr>
+                  </thead>
+              </table>
         </div>
-    <div class="card-body">
-      <table id="clientes" class="table table-hover table-bordered" style="width:100%" >
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Nome</th>
-                  <th>SobreNome</th>
-                  <th>Endereco</th>
-                  <th>Idade</th>
-                  <th>E-mail</th>
-                  <th>CPF</th>
-                </tr>
-              </thead>
-          </table>
     </div>
-</div>
-    </div>
-</div>
 
 {% endblock %}
-
 
 {% block js %}
     <script>
