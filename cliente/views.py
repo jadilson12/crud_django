@@ -17,7 +17,7 @@ def home(request):
 
 def clientes(request):
     data = {'clientes': Cliente.objects.all()}
-    return render(request, 'lista.html', data)
+    return render(request, 'clientes.html', data)
 
 
 def novo_cliente(request):

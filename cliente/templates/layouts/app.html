@@ -1,23 +1,26 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Bootstrap 4.3-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
+    <title>{% block title %}{% endblock %}</title>
     <meta charset="UTF-8">
 
-    <!-- Bootstrap 4.3-->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
-    <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
+    <div class="container">
+        {% include 'componetes/navbar.html' %}
 
-    {% block main %}
-    {%  endblock %}
+        {% block main %}
+        {%  endblock %}
 
-{% include 'componetes/footer.html' %}
+    {% include 'componetes/footer.html' %}
+    {% include 'componetes/javascript.html' %}
 
-{% include 'componetes/javascript.html' %}
-
+   </div>
 </body>
 </html>
