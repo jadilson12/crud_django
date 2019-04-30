@@ -1,12 +1,12 @@
-# Crud basico Django
+# Crud básico  em Django
 
-Utilizado as sequintes tecnologia
+Utilizando as seguintes tecnologia
 
 * bootstrap
 * jquery
 * ajax
 * datatables
-* Icone 
+* Icone Material da Google
 * font-awesome
 * json
 
