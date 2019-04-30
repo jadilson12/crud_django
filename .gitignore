@@ -1,6 +1,6 @@
 .idea/*
 .directory
-.venv
+venv
 .vscode
 db.sqlite3
 *.pyc
